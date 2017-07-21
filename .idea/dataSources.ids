@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - 2hand@localhost" uuid="5e80c2c5-dbd0-4cbb-8224-f91e731f1663">
+    <database-info product="MySQL" version="5.7.16" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="2hand">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="how2java"/>
+      <schema id="3" name="information_schema"/>
+      <schema id="4" name="invoicemanager"/>
+      <schema id="5" name="mysql"/>
+      <schema id="6" name="performance_schema"/>
+      <schema id="7" name="springbootdb"/>
+      <schema id="8" name="sys"/>
+      <table id="9" parent="1" name="catelog"/>
+      <table id="10" parent="1" name="comments"/>
+      <table id="11" parent="1" name="goods"/>
+      <table id="12" parent="1" name="image"/>
+      <table id="13" parent="1" name="notice"/>
+      <table id="14" parent="1" name="reply"/>
+      <table id="15" parent="1" name="user"/>
+      <column id="16" parent="9" name="id">
+        <comment>主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="17" parent="9" name="name">
+        <comment>分类名</comment>
+        <data-type>varchar(30)|0</data-type>
+      </column>
+      <column id="18" parent="9" name="number">
+        <comment>该分类下的商品数量</comment>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="19" parent="9" name="status">
+        <comment>分类状态，0正常，1暂用</comment>
+        <data-type>tinyint(10)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="20" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="21" parent="10" name="id">
+        <comment>评论主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="22" parent="10" name="user_id">
+        <comment>用户，外键</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="23" parent="10" name="goods_id">
+        <comment>商品，外键</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="24" parent="10" name="content">
+        <comment>评论内容</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="25" parent="10" name="create_at">
+        <comment>评论时间</comment>
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <key id="26" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="27" parent="11" name="id">
+        <comment>商品主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="28" parent="11" name="catelog_id">
+        <comment>商品分类，外键</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="29" parent="11" name="user_id">
+        <comment>用户外键</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="30" parent="11" name="name">
+        <comment>商品名称</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="31" parent="11" name="price">
+        <comment>出售价格</comment>
+        <data-type>float(11,2)|0</data-type>
+      </column>
+      <column id="32" parent="11" name="real_price">
+        <comment>真实价格</comment>
+        <data-type>float(11,2)|0</data-type>
+      </column>
+      <column id="33" parent="11" name="start_time">
+        <comment>发布时间</comment>
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="34" parent="11" name="polish_time">
+        <comment>擦亮时间，按该时间进行查询，精确到时分秒</comment>
+        <data-type>varchar(30)|0</data-type>
+      </column>
+      <column id="35" parent="11" name="end_time">
+        <comment>下架时间</comment>
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="36" parent="11" name="describle">
+        <comment>详细信息</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="37" parent="11" name="commet_num">
+        <comment>评论回复数量</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <index id="38" parent="11" name="catelog_id">
+        <columns>catelog_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="39" parent="11" name="user_id">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="40" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="41" parent="12" name="id">
+        <comment>图片主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="42" parent="12" name="goods_id">
+        <comment>商品外键</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="43" parent="12" name="img_url">
+        <comment>图片链接</comment>
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <index id="44" parent="12" name="goods_id">
+        <columns>goods_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="45" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="46" parent="13" name="id">
+        <comment>系统信息主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="47" parent="13" name="user_id">
+        <comment>用户，外键</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="48" parent="13" name="context">
+        <comment>信息内容</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="49" parent="13" name="create_at">
+        <comment>推送信息时间</comment>
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="50" parent="13" name="status">
+        <comment>状态，0未读，1已读</comment>
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <key id="51" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="52" parent="14" name="id">
+        <comment>评论回复主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="53" parent="14" name="user_id">
+        <comment>用户，外键</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="54" parent="14" name="atuser_id">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="55" parent="14" name="commet_id">
+        <comment>评论，外键</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="56" parent="14" name="content">
+        <comment>回复内容</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="57" parent="14" name="create_at">
+        <comment>回复时间</comment>
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <key id="58" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="59" parent="15" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="60" parent="15" name="phone">
+        <comment>登录使用的手机号</comment>
+        <data-type>char(11)|0</data-type>
+      </column>
+      <column id="61" parent="15" name="username">
+        <comment>用户名</comment>
+        <data-type>varchar(30)|0</data-type>
+      </column>
+      <column id="62" parent="15" name="password">
+        <comment>密码</comment>
+        <data-type>char(32)|0</data-type>
+      </column>
+      <column id="63" parent="15" name="QQ">
+        <comment>即时通讯</comment>
+        <data-type>varchar(12)|0</data-type>
+      </column>
+      <column id="64" parent="15" name="create_at">
+        <comment>创建时间</comment>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="65" parent="15" name="goods_num">
+        <comment>发布过的物品数量</comment>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="66" parent="15" name="power">
+        <comment>权限值，普通用户默认为10</comment>
+        <data-type>tinyint(10)|0</data-type>
+        <default-expression>&apos;10&apos;</default-expression>
+      </column>
+      <column id="67" parent="15" name="last_login">
+        <comment>最近一次登陆时间</comment>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="68" parent="15" name="status">
+        <comment>账号是否冻结，默认0未冻结</comment>
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="69" parent="15" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
